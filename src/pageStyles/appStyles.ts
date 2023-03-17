@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { Container as MuiContainer, ContainerProps } from "@mui/material";
+import { Box as MuiBox, BoxProps } from "@mui/material";
 
-export const Container = styled(MuiContainer)<ContainerProps>`
+export const Box = styled(MuiBox)<BoxProps>`
   position: relative;
   top: 0;
   bottom: 0;
