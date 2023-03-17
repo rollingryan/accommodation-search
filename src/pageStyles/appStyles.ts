@@ -7,6 +7,6 @@ export const Box = styled(MuiBox)<BoxProps>`
   bottom: 0;
   right: 0;
   left: 0;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(100deg, #006463 0%, #530da9 85%, #264a90 100%);
 `;
