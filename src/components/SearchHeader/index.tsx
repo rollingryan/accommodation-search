@@ -48,7 +48,7 @@ const SearchHeader = (destinations: any): React.ReactElement => {
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    console.log("yesss");
+    event.preventDefault();
   };
 
   return (
@@ -60,6 +60,7 @@ const SearchHeader = (destinations: any): React.ReactElement => {
               <InputLabel id="destination">Destination</InputLabel>
               <Select
                 data-testid="destination-select"
+                color="secondary"
                 variant="outlined"
                 labelId="destination"
                 id="destination-select"

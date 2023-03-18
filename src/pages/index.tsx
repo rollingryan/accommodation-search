@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { Container } from "@mui/material";
 
 import * as Styled from "@/pageStyles/appStyles";
 import SearchHeader from "@/components/SearchHeader";
