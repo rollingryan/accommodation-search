@@ -8,6 +8,8 @@ import {
   InputLabelProps,
 } from "@mui/material";
 
+// TODO: Make app responsive
+
 export const Wrapper = styled.div`
   position: relative;
   padding: 2.5rem 0;

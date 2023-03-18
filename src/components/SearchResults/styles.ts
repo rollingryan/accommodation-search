@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 
+// TODO: Make app responsive
+
 export const Wrapper = styled.div`
   padding: 4rem 0;
 `;
