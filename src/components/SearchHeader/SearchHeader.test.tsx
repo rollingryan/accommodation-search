@@ -3,8 +3,6 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import SearchHeader from "./index";
 import { destinations } from "../../../__mocks__/destinations";
 
-const mockHandleSubmit = jest.fn();
-
 beforeEach(() => {
   render(<SearchHeader destinations={destinations} />);
 });
@@ -25,4 +23,17 @@ describe("SearchHeader", () => {
     expect(priceRange).toBeInTheDocument();
     expect(searchButton).toBeInTheDocument();
   });
+
+  // TODO: Finish setting up observer for recoil testing.
+  // it("should call handleDestinationChange when destination is changed", () => {
+  //   const handleDestinationChange = jest.fn();
+
+  //   const destinationSelect = screen.getByTestId("destination-select");
+
+  //   fireEvent.change(destinationSelect, { target: { value: "Madrid" } });
+
+  //   expect(handleDestinationChange).toHaveBeenCalledTimes(2);
+  //   expect(handleDestinationChange).toHaveBeenCalledWith(""); // Initial state on render.
+  //   expect(handleDestinationChange).toHaveBeenCalledWith("Madrid"); // New value on change.
+  // });
 });

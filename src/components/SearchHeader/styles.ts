@@ -2,10 +2,10 @@ import styled from "@emotion/styled";
 import {
   FormControl as MuiFormControl,
   FormGroup as MuiFormGroup,
-  Fab as MuiFab,
+  InputLabel as MuiInputLabel,
   FormControlProps,
   FormGroupProps,
-  FabProps,
+  InputLabelProps,
 } from "@mui/material";
 
 export const Wrapper = styled.div`
@@ -26,6 +26,12 @@ export const FormControl = styled(MuiFormControl)<FormControlProps>`
   width: 200px;
 `;
 
+export const InputLabel = styled(MuiInputLabel)<InputLabelProps>`
+  &.Mui-focused {
+    color: #ffffff;
+  }
+`;
+
 export const FormGroup = styled(MuiFormGroup)<FormGroupProps>`
   display: flex;
   flex-flow: row nowrap;
@@ -39,10 +45,4 @@ export const FormGroup = styled(MuiFormGroup)<FormGroupProps>`
       margin-left: 0.5rem;
     }
   }
-`;
-
-export const Fab = styled(MuiFab)<FabProps>`
-  position: absolute;
-  bottom: -38px;
-  right: calc(50% - 28px);
 `;

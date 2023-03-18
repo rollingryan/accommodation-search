@@ -2,7 +2,6 @@ import { useState } from "react";
 import {
   Container,
   FormControl,
-  InputLabel,
   MenuItem,
   Select,
   SelectChangeEvent,
@@ -10,18 +9,19 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers";
 import { Dayjs } from "dayjs";
+import { useRecoilState } from "recoil";
 
 import * as Styled from "./styles";
+import { selectedDestinationAtom } from "../recoil/atoms/selectedDestinationAtom";
 
 const SearchHeader = (destinations: any): React.ReactElement => {
   const flatDestinations = destinations?.destinations;
 
-  const [destination, setDestination] = useState<string>("");
+  const [destination, setDestination] = useRecoilState(selectedDestinationAtom);
   const [fromDate, setFromDate] = useState<Dayjs | null>(null);
   const [toDate, setToDate] = useState<Dayjs | null>(null);
   const [guests, setGuests] = useState<number>(0);
@@ -57,7 +57,9 @@ const SearchHeader = (destinations: any): React.ReactElement => {
         <Container disableGutters>
           <Styled.Form onSubmit={handleSubmit} data-testid="search-form">
             <Styled.FormControl>
-              <InputLabel id="destination">Destination</InputLabel>
+              <Styled.InputLabel id="destination">
+                Destination
+              </Styled.InputLabel>
               <Select
                 data-testid="destination-select"
                 color="secondary"
@@ -69,7 +71,7 @@ const SearchHeader = (destinations: any): React.ReactElement => {
                 onChange={handleDestinationChange}
               >
                 {flatDestinations.map((destination: any) => (
-                  <MenuItem key={destination.code} value={destination.code}>
+                  <MenuItem key={destination.code} value={destination.name}>
                     {destination.name}
                   </MenuItem>
                 ))}
@@ -92,6 +94,7 @@ const SearchHeader = (destinations: any): React.ReactElement => {
             <FormControl>
               <TextField
                 data-testid="guests"
+                color="secondary"
                 type="number"
                 variant="outlined"
                 onChange={handleGuestsChange}
@@ -114,15 +117,6 @@ const SearchHeader = (destinations: any): React.ReactElement => {
                 valueLabelDisplay="auto"
               />
             </Styled.FormControl>
-
-            <Styled.Fab
-              aria-label="search"
-              type="submit"
-              value="submit"
-              data-testid="search-button"
-            >
-              <SearchIcon />
-            </Styled.Fab>
           </Styled.Form>
         </Container>
       </Styled.Wrapper>
