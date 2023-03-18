@@ -3,9 +3,11 @@ import {
   Card as MuiCard,
   CardContent as MuiCardContent,
   CardMedia as MuiCardMedia,
+  ListItem as MuiListItem,
   CardProps,
   CardContentProps,
   CardMediaProps,
+  ListItemProps,
 } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 
@@ -22,7 +24,7 @@ export const Card = styled(MuiCard)<CardProps>`
 
 export const CardContent = styled(MuiCardContent)<CardContentProps>`
   flex: 2;
-  padding: 1rem;
+  padding: 1rem 2rem;
 `;
 
 export const CustomCarousel = styled(Carousel)`
@@ -33,6 +35,12 @@ export const CardMedia = styled(MuiCardMedia)<CardMediaProps>`
   height: 15rem;
 `;
 
+export const ListItem = styled(MuiListItem)<ListItemProps>`
+  &:not(:last-of-type) {
+    border-bottom: 1px solid #e0e0e0;
+  }
+`;
+
 export const ListItemText = styled.div`
   display: flex;
   flex-flow: row nowrap;
@@ -40,7 +48,6 @@ export const ListItemText = styled.div`
   align-items: center;
   margin: 0;
   width: 100%;
-  border-bottom: 1px solid #e0e0e0;
 `;
 
 export const Price = styled.div`

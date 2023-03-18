@@ -3,12 +3,10 @@ import {
   Container,
   createTheme,
   List,
-  ListItem,
   ThemeProvider,
   Typography,
   useTheme,
 } from "@mui/material";
-import Carousel from "react-material-ui-carousel";
 
 import * as Styled from "./styles";
 
@@ -44,7 +42,7 @@ const SearchResults = (results: any): React.ReactElement => {
                     {result?.combinations?.map((combination: any) => {
                       const keys = Object.keys(combination);
                       return (
-                        <ListItem key={combination.price}>
+                        <Styled.ListItem key={combination.price}>
                           <Styled.ListItemText>
                             <Typography>
                               {primaryText(keys, combination)}
@@ -56,7 +54,7 @@ const SearchResults = (results: any): React.ReactElement => {
                               <Typography>&nbsp;pppn</Typography>
                             </Styled.Price>
                           </Styled.ListItemText>
-                        </ListItem>
+                        </Styled.ListItem>
                       );
                     })}
                   </List>

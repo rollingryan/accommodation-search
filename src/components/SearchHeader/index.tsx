@@ -16,11 +16,12 @@ import { Dayjs } from "dayjs";
 import { useRecoilState } from "recoil";
 
 import * as Styled from "./styles";
-import { selectedDestinationAtom } from "../recoil/atoms/selectedDestinationAtom";
+import { selectedDestinationAtom } from "../../app/recoil/atoms/selectedDestinationAtom";
 
 const SearchHeader = (destinations: any): React.ReactElement => {
   const flatDestinations = destinations?.destinations;
 
+  // TODO: Finish the search functionality
   const [destination, setDestination] = useRecoilState(selectedDestinationAtom);
   const [fromDate, setFromDate] = useState<Dayjs | null>(null);
   const [toDate, setToDate] = useState<Dayjs | null>(null);

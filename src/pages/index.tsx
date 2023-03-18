@@ -8,8 +8,8 @@ import SearchHeader from "@/components/SearchHeader";
 import SearchResults from "@/components/SearchResults";
 import { results } from "../../__mocks__/results";
 import { destinations } from "../../__mocks__/destinations";
-import { selectedDestinationAtom } from "../components/recoil/atoms/selectedDestinationAtom";
-import { allDestinationsAtom } from "../components/recoil/atoms/allDestinationsAtom";
+import { selectedDestinationAtom } from "../app/recoil/atoms/selectedDestinationAtom";
+import { allDestinationsAtom } from "../app/recoil/atoms/allDestinationsAtom";
 
 const Home: NextPage = () => {
   const selectedDestination = useRecoilState(selectedDestinationAtom);
